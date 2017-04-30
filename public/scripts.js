@@ -80,7 +80,7 @@ function city(){
   //   'nyc': { center: [40.693817, -73.929769], suffix: ', new york city, ny' }
   // };
   // return cities[$('input[name=city]:checked').val()];
-  return 'nyc';
+  return { 'nyc': { center: [40.693817, -73.929769], suffix: ', new york city, ny' } };
 }
 
 function switchAddresses(){
