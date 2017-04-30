@@ -1,0 +1,78 @@
+<!doctype html>
+<!--
+  Tangram: real-time WebGL rendering for OpenStreetMap
+
+  http://github.com/tangrams/tangram
+  http://mapzen.com
+-->
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PBR</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="scripts.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      margin: 0px;
+      border: 0px;
+      padding: 0px;
+    }
+
+    #map {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+
+  </style>
+  </head>
+
+  <body>
+  <div id="map"></div>
+
+  <div id="controls">
+    <div id="switch-button">
+    <button type="button" id="switch" title="switch origin and destination">🔀</button>
+    </div>
+    <div id="input">
+    <input type="text" id="origin" placeholder="origin" /><br>
+    <input type="text" id="destination" placeholder="destination" />
+    <button type="button" id="submit" title="get your route">🚲</button><br>
+    </div>
+    <div id="radios">
+    <!-- <input type="radio" id="chi" name="city" value="chi" checked> chi <br> -->
+    <!-- <input type="radio" id="nyc" name="city" value="nyc"> nyc -->
+    </span>
+  </div>
+
+  <!-- leaflet -->
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+
+  <!-- Main tangram library -->
+  <script src="https://mapzen.com/tangram/0.10/tangram.min.js"></script>
+
+  <!-- Demo setup -->
+  <script>
+    
+    var map = L.map('map');
+
+    var layer = Tangram.leafletLayer({
+      scene: 'cinnabar-style.yaml',
+      attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
+    });
+
+    layer.addTo(map);
+
+    map.setView([40.70531887544228, -74.00976419448853], 15);
+
+  </script>
+
+  <script src="Polyline.encoded.js"></script>
+
+  </body>
+</html>
