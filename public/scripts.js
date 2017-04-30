@@ -75,12 +75,12 @@ function removePolylinesFromMap(polylines){
 }
 
 function city(){
-  // var cities = {
-  //   'chi': { center: [41.840675, -87.679365], suffix: ', chicago, il' },
-  //   'nyc': { center: [40.693817, -73.929769], suffix: ', new york city, ny' }
-  // };
+  var cities = {
+    'chi': { center: [41.840675, -87.679365], suffix: ', chicago, il' },
+    'nyc': { center: [40.693817, -73.929769], suffix: ', new york city, ny' }
+  };
   // return cities[$('input[name=city]:checked').val()];
-  return { 'nyc': { center: [40.693817, -73.929769], suffix: ', new york city, ny' } };
+  return { center: [40.693817, -73.929769], suffix: ', new york city, ny' };
 }
 
 function switchAddresses(){
