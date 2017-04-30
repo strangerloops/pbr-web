@@ -31,7 +31,8 @@ function requestRoute(){
 
   var origin = $("#origin").val() + city().suffix;
   var destination = $("#destination").val() + city().suffix;
-  var cityName = $('input[name=city]:checked').val();
+  // var cityName = $('input[name=city]:checked').val();
+  var cityName = 'nyc';
 
   var base = "/route?";
   var params = "city=" + cityName + "&origin=" + origin + "&destination=" + destination;
