@@ -1,6 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'json'
+require 'polylines'
 
 module Routing
   def route(origin, destination, city)
