@@ -13,6 +13,9 @@ module Routing
       if response.code == '200'
         body = JSON.parse(response.body)
         body[:profile_name] = endpoint[:profile_name]
+        encoded_polyline = body['routes'].first['geometry']
+        decoded_polyline = Polylines::Decoder.decode_polyline(encoded_polyline)
+        midpoint = decoded_polyline[decoded_polyline.count / 2]
         results.push(body)
       else
         raise 'Could not get route.'
